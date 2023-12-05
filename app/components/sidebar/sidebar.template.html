@@ -1,0 +1,11 @@
+<div class="sidebar">
+  <md-list class="sidebar__menu">
+    <md-list-item ng-repeat="menu in menus">
+      <a class="sidebar__menu__item" href="#!/{{menu.path}}">
+        <md-button>
+          {{menu.title}}
+        </md-button>
+      </a>
+    </md-list-item>
+  </md-list>
+</div>

@@ -1,0 +1,28 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.main-container {
+  display: flex;
+  height: 100%;
+  font-size: 16px;
+}
+.main-container__sidebar {
+  flex-grow: 2;
+  flex-basis: 100px;
+  background-color: #fff;
+}
+.main-container__routing {
+  flex-grow: 10;
+  flex-basis: 100px;
+  height: 100%;
+  overflow-y: scroll;
+  padding: 16px;
+}

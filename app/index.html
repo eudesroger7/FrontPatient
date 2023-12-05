@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="patientApp">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Front Patient</title>
+
+  <link rel="stylesheet" href="lib/angular-material/angular-material.min.css">
+  <link rel="stylesheet" href="lib/angular-material-data-table/dist/md-data-table.css">
+  <link rel="stylesheet" href="app.css">
+  <!-- components styles -->
+  <link rel="stylesheet" href="components/sidebar/sidebar.css">
+
+  <script src="lib/angular/angular.js"></script>
+  <script src="lib/angular-messages/angular-messages.js"></script>
+  <script src="lib/angular-sanitize/angular-sanitize.js"></script>
+  <script src="lib/angular-animate/angular-animate.js"></script>
+  <script src="lib/angular-aria/angular-aria.js"></script>
+  <script src="lib/angular-material/angular-material.js"></script>
+  <script src="lib/angular-route/angular-route.js"></script>
+  <script src="lib/angular-material-data-table/dist/md-data-table.js"></script>
+  <script src="app.module.js"></script>
+  <script src="app.route.js"></script>
+  <!-- modules -->
+  <script src="pages/pages.module.js"></script>
+  <!-- controllers -->
+  <script src="app.controller.js"></script>
+  <script src="pages/people/people.controller.js"></script>
+  <script src="pages/occupations/occupations.controller.js"></script>
+  <script src="pages/occupations/create/create.controller.js"></script>
+  <!-- services -->
+  <script src="services/people.service.js"></script>
+  <script src="services/occupations.service.js"></script>
+  <!-- factories -->
+  <script src="services/query.factory.js"></script>
+  <!-- config -->
+  <script src="config/api.config.js"></script>
+  <!-- directives -->
+  <script src="components/sidebar/sidebar.directive.js"></script>
+  <script src="components/table/table.directive.js"></script>
+</head>
+<body ng-controller="appCtrl">
+  <main class="main-container">
+    <app-sidebar class="main-container__sidebar" menus="menus"></app-sidebar>
+    <md-content class="main-container__routing">
+      <div ng-view></div>
+    </md-conten>
+  </main>
+</body>
+</html>

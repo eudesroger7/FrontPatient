@@ -1,0 +1,16 @@
+<div>
+  <md-table-container>
+    <table md-table md-row-select multiple ng-model="selected" md-progress="promise">
+      <thead md-head md-order="query.order" ng-click md-on-reorder="getData">
+        <tr md-row>
+          <th ng-repeat="col in columns" md-column md-order-by="{{col.orderBy}}"><span>{{col.header}}</span></th>
+        </tr>
+      </thead>
+      <tbody md-body>
+          <tr md-row md-select="dataItem.id" md-select-id="dataItem.id" md-auto-select ng-repeat="dataItem in data">
+            <td md-cell ng-repeat="col in columns">{{dataItem[col.keyValue]}}</td>
+          </tr>
+      </tbody>
+    </table>
+  </md-table-container>
+</div>

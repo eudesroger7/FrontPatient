@@ -1,0 +1,20 @@
+<md-content>
+  <form name="createOccupationForm">
+    <div layout="row">
+      <md-input-container flex="50">
+        <label>Client Name</label>
+        <input required name="clientName" ng-model="project.clientName">
+        <div ng-messages="projectForm.clientName.$error">
+          <div ng-message="required">This is required.</div>
+        </div>
+      </md-input-container>
+      <md-input-container flex="50">
+        <label>Client Name</label>
+        <input required name="clientName" ng-model="project.clientName">
+        <div ng-messages="projectForm.clientName.$error">
+          <div ng-message="required">This is required.</div>
+        </div>
+      </md-input-container>
+    </div>
+  </form>
+</md-content>

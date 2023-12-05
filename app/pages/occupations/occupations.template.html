@@ -1,0 +1,13 @@
+<div>
+  <div layout="row" layout-align="end center">
+    <div layout="row">
+      <md-input-container class="md-icon-float md-block">
+        <label>Pesquisar por Nome</label>
+        <input ng-model="query.search.value" type="text">
+      </md-input-container>
+      <md-button class="md-primary" ng-click="getAllOccupations()">Pesquisar</md-button>
+    </div>
+    <a md-button class="md-primary md-raised" href="#!/occupations/create">Adicionar</a>
+  </div>
+  <app-table data="occupations" columns="tableColumns" selected="selected" get-data="getAllOccupations" query="query"></app-table>
+</div>
