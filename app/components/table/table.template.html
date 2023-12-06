@@ -4,11 +4,13 @@
       <thead md-head md-order="query.order" ng-click md-on-reorder="getData">
         <tr md-row>
           <th ng-repeat="col in columns" md-column md-order-by="{{col.orderBy}}"><span>{{col.header}}</span></th>
+          <th md-column class="col-align-right"></th>
         </tr>
       </thead>
       <tbody md-body>
           <tr md-row md-select="dataItem.id" md-select-id="dataItem.id" md-auto-select ng-repeat="dataItem in data">
             <td md-cell ng-repeat="col in columns">{{dataItem[col.keyValue]}}</td>
+            <td md-cell ng-transclude data-row-id="{{dataItem.id}}"  class="col-align-right"></td>
           </tr>
       </tbody>
     </table>

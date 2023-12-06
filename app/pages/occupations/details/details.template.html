@@ -1,0 +1,19 @@
+<md-dialog layout-padding>
+  <div layout="row" layout-align="space-between center">
+    <h3>Detalhes da Profissão</h3>
+    <md-button class="md-icon-button">X</md-button>
+  </div>
+  <div layout="row">
+    <div flex="50">
+      #{{currentDetails.id}}
+    </div>
+    <div flex="50">
+      {{peopleCount}}
+    </div>
+    <div layout="column">
+      <p class="label">Nome</p>
+      <p class="value">{{currentDetails.name}}</p>
+    </div>
+  </div>
+
+</md-dialog>

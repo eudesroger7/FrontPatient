@@ -1,6 +1,6 @@
 angular
   .module('patientApp')
-  .controller('appCtrl', function(
+  .controller('appCtrl', function (
     $scope,
   ) {
     $scope.menus = [

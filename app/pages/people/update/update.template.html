@@ -1,0 +1,57 @@
+<md-content>
+  <form name="createPeopleForm">
+    <div layout="row">
+      <md-input-container flex="60">
+        <label>Nome</label>
+        <input required name="name" ng-model="person.name">
+        <div ng-messages="person.name.$error">
+          <div ng-message="required">Campo obrigatório</div>
+        </div>
+      </md-input-container>
+      <md-input-container flex="40">
+        <label>Data de Nascimento</label>
+        <input required name="dateOfBirth" ng-model="person.dateOfBirth">
+        <div ng-messages="person.dateOfBirth.$error">
+          <div ng-message="required">Campo obrigatório</div>
+        </div>
+      </md-input-container>
+    </div>
+    <div layout="row">
+      <md-input-container flex="30">
+        <label>CPF</label>
+        <input required name="cpf" ng-model="person.cpf">
+        <div ng-messages="person.cpf.$error">
+          <div ng-message="required">Campo obrigatório</div>
+        </div>
+      </md-input-container>
+      <md-input-container flex="30">
+        <label>Telefone</label>
+        <input required name="phone" ng-model="person.phone">
+        <div ng-messages="person.phone.$error">
+          <div ng-message="required">Campo obrigatório</div>
+        </div>
+      </md-input-container>
+      <md-input-container flex="40">
+        <label>Profissão</label>
+        <md-select required placeholder="Selecione uma profissão" ng-model="person.occupationId">
+          <md-option ng-repeat="occupation in occupations" ng-value="occupation.id">
+            {{occupation.name}}
+          </md-option>
+        </md-select>
+        <div ng-messages="person.occupationId.$error">
+          <div ng-message="required">Campo obrigatório</div>
+        </div>
+      </md-input-container>
+    </div>
+    <div layout="row">
+      <md-input-container flex="100">
+        <label>Observações</label>
+        <input name="comments" ng-model="person.comments">
+        <div ng-messages="person.comments.$error">
+          <div ng-message="required">Campo obrigatório</div>
+        </div>
+      </md-input-container>
+    </div>
+  </form>
+  <md-button class="md-raised md-primary" ng-click="update()">Salvar</md-button>
+</md-content>

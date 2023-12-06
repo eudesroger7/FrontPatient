@@ -4,13 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Front Patient</title>
-
+  <!-- lib styles -->
   <link rel="stylesheet" href="lib/angular-material/angular-material.min.css">
   <link rel="stylesheet" href="lib/angular-material-data-table/dist/md-data-table.css">
   <link rel="stylesheet" href="app.css">
   <!-- components styles -->
+  <link rel="stylesheet" href="assets/styles/notify.css">
   <link rel="stylesheet" href="components/sidebar/sidebar.css">
-
+  <link rel="stylesheet" href="assets/styles/table.css">
+  <!-- libs - scripts -->
   <script src="lib/angular/angular.js"></script>
   <script src="lib/angular-messages/angular-messages.js"></script>
   <script src="lib/angular-sanitize/angular-sanitize.js"></script>
@@ -26,13 +28,20 @@
   <!-- controllers -->
   <script src="app.controller.js"></script>
   <script src="pages/people/people.controller.js"></script>
+  <script src="pages/people/create/create.controller.js"></script>
+  <script src="pages/people/update/update.controller.js"></script>
+  <script src="pages/people/details/details.controller.js"></script>
   <script src="pages/occupations/occupations.controller.js"></script>
   <script src="pages/occupations/create/create.controller.js"></script>
+  <script src="pages/occupations/update/update.controller.js"></script>
+  <script src="pages/occupations/details/details.controller.js"></script>
   <!-- services -->
   <script src="services/people.service.js"></script>
   <script src="services/occupations.service.js"></script>
   <!-- factories -->
-  <script src="services/query.factory.js"></script>
+  <script src="factories/query.factory.js"></script>
+  <script src="factories/notify.factory.js"></script>
+  <script src="factories/dialog.factory.js"></script>
   <!-- config -->
   <script src="config/api.config.js"></script>
   <!-- directives -->

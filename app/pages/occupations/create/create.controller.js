@@ -1,30 +1,15 @@
 angular
   .module('occupations')
-  .controller('occupationsCreateCtrl', function(
+  .controller('occupationsCreateCtrl', function (
     $scope,
-    occupationsService
+    $location,
+    occupationsService,
+    $appNotify
   ) {
-    $scope.selected = [];
-    $scope.query = {
-      order: '-name',
-      search: {
-        value: '',
-        fields: ['name']
-      }
-    };
-    $scope.tableColumns = [
-      { header: 'Nome', orderBy: 'name', keyValue: 'name' }
-    ];
-
-    $scope.getAllOccupations = function () {
-      occupationsService.getAll($scope.query).then(function (response) {
-        $scope.occupations = response.data;
-      })
+    $scope.save = function () {
+      occupationsService.create($scope.occupation).then(function (response) {
+        $appNotify.show('Profissão criada com sucesso', 'success');
+        $location.path(['/occupations']);
+      });
     }
-
-    const init = function () {
-      $scope.getAllOccupations();
-    }
-
-    init();
   });

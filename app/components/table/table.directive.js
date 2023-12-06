@@ -6,6 +6,7 @@ angular
     return {
       templateUrl: 'components/table/table.template.html',
       replace: true,
+      transclude: true,
       scope: {
         data: '=',
         columns: '=',
