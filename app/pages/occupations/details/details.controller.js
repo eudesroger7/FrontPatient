@@ -1,22 +1,7 @@
 angular
   .module('occupations')
-  .controller('occupationsDetailsCtrl', function (
-    $scope,
-    occupationsService
-  ) {
-    console.log($scope.currentDetails)
-
-    const getPeopleCount = function () {
-      occupationsService.getPeopleCountById($scope.currentDetails.id)
-        .then(function (response) {
-          console.log(response);
-          $scope.peopleCount = response.data.count;
-        });
+  .controller('occupationsDetailsCtrl', function ($scope, $mdDialog) {
+    $scope.close = function () {
+      $mdDialog.cancel();
     }
-
-    const init = function () {
-      getPeopleCount();
-    }
-
-    init();
   });

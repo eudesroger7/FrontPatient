@@ -1,0 +1,49 @@
+.md-button {
+  text-transform: none !important;
+  font-weight: 600 !important;
+  font-size: 0.8rem !important;
+}
+
+.md-cell {
+  font-weight: 500 !important;
+}
+
+md-input-container > label,
+md-option {
+  font-weight: 500 !important;
+  font-size: 0.8rem !important;
+}
+
+.md-input,
+.md-select-value,
+.md-toast-text {
+  font-family: 'montserrat';
+  font-weight: 500 !important;
+  font-size: 0.9rem !important;
+}
+
+.ng-untouched ~ .md-input-messages-animation {
+  height: 0;
+  opacity: 0;
+}
+
+md-dialog .md-dialog-content {
+  text-align: center;
+}
+
+md-dialog md-dialog-actions {
+  justify-content: space-between;
+  padding: 0 24px 0 0;
+}
+
+md-dialog-actions .md-confirm-button {
+  background-color: rgb(63,81,181);
+  color: #fff !important;
+  min-width: 150px;
+}
+
+md-dialog-actions .md-confirm-button:hover,
+md-dialog-actions .md-confirm-button:focus {
+  background-color: rgb(63,81,181, 0.6) !important;
+  color: #fff !important;
+}

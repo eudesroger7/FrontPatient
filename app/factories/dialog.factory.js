@@ -9,7 +9,7 @@ angular
     }) {
       const dialog = $mdDialog.confirm()
         .title(title || '')
-        .textContent(message || '')
+        .htmlContent(`<p class="dialog-confirm-message">${message}</p>`)
         .ok(confirmButtonLabel || 'Confirmar')
         .cancel(cancelButtonLabel || 'Cancelar');
   

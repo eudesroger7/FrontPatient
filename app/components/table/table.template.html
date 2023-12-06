@@ -1,6 +1,6 @@
 <div>
   <md-table-container>
-    <table md-table md-row-select multiple ng-model="selected" md-progress="promise">
+    <table md-table ng-model="selected" md-progress="promise">
       <thead md-head md-order="query.order" ng-click md-on-reorder="getData">
         <tr md-row>
           <th ng-repeat="col in columns" md-column md-order-by="{{col.orderBy}}"><span>{{col.header}}</span></th>

@@ -4,13 +4,21 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Front Patient</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
   <!-- lib styles -->
   <link rel="stylesheet" href="lib/angular-material/angular-material.min.css">
   <link rel="stylesheet" href="lib/angular-material-data-table/dist/md-data-table.css">
   <link rel="stylesheet" href="app.css">
+  <link rel="stylesheet" href="assets/styles/mixin.css">
+  <link rel="stylesheet" href="assets/styles/theming.css">
   <!-- components styles -->
   <link rel="stylesheet" href="assets/styles/notify.css">
   <link rel="stylesheet" href="components/sidebar/sidebar.css">
+  <link rel="stylesheet" href="components/navbar/navbar.css">
   <link rel="stylesheet" href="assets/styles/table.css">
   <!-- libs - scripts -->
   <script src="lib/angular/angular.js"></script>
@@ -21,6 +29,7 @@
   <script src="lib/angular-material/angular-material.js"></script>
   <script src="lib/angular-route/angular-route.js"></script>
   <script src="lib/angular-material-data-table/dist/md-data-table.js"></script>
+  <script src="lib/angular-ui-mask/dist/mask.min.js"></script>
   <script src="app.module.js"></script>
   <script src="app.route.js"></script>
   <!-- modules -->
@@ -42,18 +51,24 @@
   <script src="factories/query.factory.js"></script>
   <script src="factories/notify.factory.js"></script>
   <script src="factories/dialog.factory.js"></script>
+  <script src="factories/format.factory.js"></script>
   <!-- config -->
   <script src="config/api.config.js"></script>
+  <script src="config/mask.config.js"></script>
   <!-- directives -->
   <script src="components/sidebar/sidebar.directive.js"></script>
   <script src="components/table/table.directive.js"></script>
+  <script src="components/navbar/navbar.directive.js"></script>
 </head>
 <body ng-controller="appCtrl">
   <main class="main-container">
     <app-sidebar class="main-container__sidebar" menus="menus"></app-sidebar>
-    <md-content class="main-container__routing">
-      <div ng-view></div>
-    </md-conten>
+    <md-content class="main-container__content">
+      <app-navbar></app-navbar>
+      <md-content class="main-container__routing">
+        <md-card class="main-container__routing__view" ng-view></md-card>
+      </md-conten>
+    </md-content>
   </main>
 </body>
 </html>

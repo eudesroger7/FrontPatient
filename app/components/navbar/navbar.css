@@ -1,0 +1,18 @@
+.navbar {
+  height: 50px;
+  overflow-y: auto;
+  border-bottom: 1px solid #eee;
+  background-color: #fff;
+  padding: 0 24px;
+}
+
+
+.sidebar__menu__item {
+  width: 100%;
+  text-decoration: none;
+  display: flex;
+}
+
+.sidebar__menu__item > button {
+  width: 100%;
+}

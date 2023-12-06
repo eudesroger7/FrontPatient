@@ -2,6 +2,7 @@
 // config = {
 //   order: 'field'|'-field',
 //   withRelation: 'relation',
+//   relationFields: {},
 //   search: {
 //     value: 'value',
 //     fields: ['field','field']
@@ -11,38 +12,48 @@
 angular
   .module('patientApp')
   .factory('$appQuery', function () {
-    const _create = function (config) {
+    const _create = function ({
+      order,
+      withRelation,
+      relationFields,
+      search
+    }) {
       let _query = {};
 
-      if (config.order) {
-        const hasDash = config.order.includes('-');
-        _query.order = `${config.order.replace('-','')} ${hasDash ? 'ASC' : 'DESC'}`;
+      if (order) {
+        const hasDash = order.includes('-');
+        _query.order = `${order.replace('-','')} ${hasDash ? 'ASC' : 'DESC'}`;
       }
-      if (config.withRelation) {
+      if (withRelation) {
         _query = {
           ..._query,
-          include: [{ relation: config.withRelation }]
+          include: [{
+            relation: withRelation,
+            scope: relationFields
+              ? { fields: relationFields } 
+              : {}
+          }]
         }
       }
       if (
-        config.search
-        && config.search.value
-        && config.search.fields
-        && config.search.fields.length > 0
+        search
+        && search.value
+        && search.fields
+        && search.fields.length > 0
       ) {
         _query = {
           ..._query,
-          where: config.search.fields.length > 1
+          where: search.fields.length > 1
             ? {
-              'or': config.search.fields.map(field => ({
+              'or': search.fields.map(field => ({
                 [field]: {
-                  'ilike': `%25${config.search.value}%25`
+                  'ilike': `%25${search.value}%25`
                 }
               }))
             }
             : {
-              [config.search.fields[0]]: {
-                'ilike': `%25${config.search.value}%25`
+              [search.fields[0]]: {
+                'ilike': `%25${search.value}%25`
               }
             }
         }

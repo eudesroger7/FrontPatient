@@ -1,18 +1,30 @@
-<md-dialog layout-padding>
+<md-dialog layout-padding layout="column" style="min-width: 500px">
   <div layout="row" layout-align="space-between center">
-    <h3>Detalhes da Profissão</h3>
-    <md-button class="md-icon-button">X</md-button>
+    <h3 class="details-title">Detalhes da Profissão</h3>
+    <md-button class="md-icon-button" ng-click="close()">
+      <md-icon md-font-library="material-icons">close</md-icon>
+    </md-button>
   </div>
+
   <div layout="row">
-    <div flex="50">
-      #{{currentDetails.id}}
+    <div layout="column" flex="30">
+      <p class="field__label">Identificador</p>
+      <p class="field__value">#{{currentDetails.id}}</p>
     </div>
-    <div flex="50">
-      {{peopleCount}}
+    <div layout="column" flex="30">
+      <p class="field__label">Última Atualização</p>
+      <p class="field__value">{{currentDetails.updatedAt | date:'dd/MM/yyyy HH:mm'}}</p>
     </div>
-    <div layout="column">
-      <p class="label">Nome</p>
-      <p class="value">{{currentDetails.name}}</p>
+    <div layout="column" flex="40">
+      <p class="field__label">Pessoas Vinculadas</p>
+      <p class="field__value">{{currentDetails.peopleCount}}</p>
+    </div>
+  </div>
+
+  <div layout="row">
+    <div layout="column" flex="100">
+      <p class="field__label">Nome</p>
+      <p class="field__value">{{currentDetails.name}}</p>
     </div>
   </div>
 

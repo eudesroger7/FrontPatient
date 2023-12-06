@@ -1,17 +1,18 @@
-<md-content>
-  <form name="createPeopleForm">
+<md-content class="md-content-white" layout="column" layout-align="center center">
+  <form name="updatePeopleForm" class="full-width" flex="80">
     <div layout="row">
       <md-input-container flex="60">
         <label>Nome</label>
-        <input required name="name" ng-model="person.name">
-        <div ng-messages="person.name.$error">
+        <input required minlength="10" name="name" ng-model="person.name">
+        <div ng-messages="updatePeopleForm.name.$error">
           <div ng-message="required">Campo obrigatório</div>
+          <div ng-message="minlength">O nome deve ter, no mínimo, 10 caracteres</div>
         </div>
       </md-input-container>
       <md-input-container flex="40">
         <label>Data de Nascimento</label>
-        <input required name="dateOfBirth" ng-model="person.dateOfBirth">
-        <div ng-messages="person.dateOfBirth.$error">
+        <input required name="dateOfBirth" ng-model="person.dateOfBirth" ui-mask="99/99/9999" ui-mask-placeholder-char="space">
+        <div ng-messages="updatePeopleForm.dateOfBirth.$error">
           <div ng-message="required">Campo obrigatório</div>
         </div>
       </md-input-container>
@@ -19,15 +20,15 @@
     <div layout="row">
       <md-input-container flex="30">
         <label>CPF</label>
-        <input required name="cpf" ng-model="person.cpf">
-        <div ng-messages="person.cpf.$error">
+        <input required name="cpf" ng-model="person.cpf" ui-mask="999.999.999-99" ui-mask-placeholder-char="space">
+        <div ng-messages="updatePeopleForm.cpf.$error">
           <div ng-message="required">Campo obrigatório</div>
         </div>
       </md-input-container>
       <md-input-container flex="30">
         <label>Telefone</label>
-        <input required name="phone" ng-model="person.phone">
-        <div ng-messages="person.phone.$error">
+        <input required name="phone" ng-model="person.phone" ui-mask="(99) 99999-9999" ui-mask-placeholder-char="space">
+        <div ng-messages="updatePeopleForm.phone.$error">
           <div ng-message="required">Campo obrigatório</div>
         </div>
       </md-input-container>
@@ -38,7 +39,7 @@
             {{occupation.name}}
           </md-option>
         </md-select>
-        <div ng-messages="person.occupationId.$error">
+        <div ng-messages="updatePeopleForm.occupationId.$error">
           <div ng-message="required">Campo obrigatório</div>
         </div>
       </md-input-container>
@@ -47,11 +48,16 @@
       <md-input-container flex="100">
         <label>Observações</label>
         <input name="comments" ng-model="person.comments">
-        <div ng-messages="person.comments.$error">
+        <div ng-messages="updatePeopleForm.comments.$error">
           <div ng-message="required">Campo obrigatório</div>
         </div>
       </md-input-container>
     </div>
   </form>
-  <md-button class="md-raised md-primary" ng-click="update()">Salvar</md-button>
+  <md-button class="md-raised md-primary" ng-click="update()" ng-disabled="updatePeopleForm.$invalid">
+    Salvar
+  </md-button>
+  <a md-button class="md-warn" href="#!/people">
+    Cancelar
+  </a>
 </md-content>

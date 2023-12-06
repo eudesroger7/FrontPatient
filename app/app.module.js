@@ -3,6 +3,9 @@ angular
     'ngRoute',
     'ngSanitize',
     'ngMaterial',
+    'ngMessages',
+    'ui.mask',
     'pages',
-    'sidebar'
+    'sidebar',
+    'navbar'
   ]);

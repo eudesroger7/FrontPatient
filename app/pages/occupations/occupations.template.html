@@ -1,17 +1,26 @@
 <div>
-  <div layout="row" layout-align="end center">
-    <div layout="row">
-      <md-input-container class="md-icon-float md-block">
-        <label>Pesquisar por Nome</label>
-        <input ng-model="query.search.value" type="text">
+  <div layout="row" layout-align="space-between start">
+    <a md-button class="md-primary md-raised" href="#!/occupations/create">
+      <md-icon md-font-library="material-icons">add</md-icon>
+      Adicionar
+    </a>
+    <div layout="row" layout-align="start start">
+      <md-input-container class="input-search-container">
+        <label>Pesquisar por nome</label>
+        <input ng-model="query.search.value" type="search">
       </md-input-container>
       <md-button class="md-primary" ng-click="getAllOccupations()">Pesquisar</md-button>
     </div>
-    <a md-button class="md-primary md-raised" href="#!/occupations/create">Adicionar</a>
   </div>
   <app-table data="occupations" columns="tableColumns" selected="selected" get-data="getAllOccupations" query="query">
-    <md-button ng-click="openDetails($event)">ver</md-button>
-    <md-button ng-click="edit($event)">editar</md-button>
-    <md-button class="md-warn" ng-click="delete($event)">excluir</md-button>
+    <md-button class="md-icon-button md-primary" ng-click="openDetails($event)">
+      <md-icon md-font-library="material-icons">search</md-icon>
+    </md-button>
+    <md-button class="md-icon-button md-primary" ng-click="edit($event)">
+      <md-icon md-font-library="material-icons">edit</md-icon>
+    </md-button>
+    <md-button class="md-icon-button md-warn" ng-click="delete($event)">
+      <md-icon md-font-library="material-icons">delete</md-icon>
+    </md-button>
   </app-table>
 </div>

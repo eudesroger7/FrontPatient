@@ -1,8 +1,10 @@
-<div class="sidebar">
+<div class="sidebar" layout="column" layout-align="start center">
+  <img src="/assets/img/logo-paciente.png" alt="Logo paciente 360" class="logo">
   <md-list class="sidebar__menu">
     <md-list-item ng-repeat="menu in menus">
       <a class="sidebar__menu__item" href="#!/{{menu.path}}">
-        <md-button>
+        <md-button class="btn sidebar__menu__item__btn">
+          <md-icon md-font-library="material-icons">{{menu.icon}}</md-icon>
           {{menu.title}}
         </md-button>
       </a>

@@ -1,35 +1,52 @@
-<md-dialog layout-padding>
+<md-dialog layout-padding layout="column" style="min-width: 700px">
   <div layout="row" layout-align="space-between center">
-    <h3>Detalhes da Pessoa</h3>
-    <md-button class="md-icon-button">X</md-button>
+    <h3 class="details-title">Detalhes da Pessoa</h3>
+    <md-button class="md-icon-button" ng-click="close()">
+      <md-icon md-font-library="material-icons">close</md-icon>
+    </md-button>
   </div>
+
   <div layout="row">
-    <div flex="50">
-      #{{currentDetails.id}}
+    <div layout="column" flex="30">
+      <p class="field__label">Identificador</p>
+      <p class="field__value">#{{currentDetails.id}}</p>
     </div>
-    <div layout="column">
-      <p class="label">Nome</p>
-      <p class="value">{{currentDetails.name}}</p>
+    <div layout="column" flex="30">
+      <p class="field__label">Última Atualização</p>
+      <p class="field__value">{{currentDetails.updatedAt | date:'dd/MM/yyyy HH:mm'}}</p>
     </div>
-    <div layout="column">
-      <p class="label">Data de Nascimento</p>
-      <p class="value">{{currentDetails.dateOfBirth}}</p>
+  </div>
+
+  <div layout="row">
+    <div layout="column" flex="60">
+      <p class="field__label">Nome</p>
+      <p class="field__value">{{currentDetails.name}}</p>
     </div>
-    <div layout="column">
-      <p class="label">CPF</p>
-      <p class="value">{{currentDetails.cpf}}</p>
+    <div layout="column" flex="40">
+      <p class="field__label">Data de Nascimento</p>
+      <p class="field__value">{{currentDetails.dateOfBirth}}</p>
     </div>
-    <div layout="column">
-      <p class="label">Telefone</p>
-      <p class="value">{{currentDetails.phone}}</p>
+  </div>
+
+  <div layout="row">
+    <div layout="column" flex="30">
+      <p class="field__label">CPF</p>
+      <p class="field__value">{{currentDetails.cpf}}</p>
     </div>
-    <div layout="column">
-      <p class="label">Profissão</p>
-      <p class="value">{{currentDetails.occupationName}}</p>
+    <div layout="column" flex="30">
+      <p class="field__label">Telefone</p>
+      <p class="field__value">{{currentDetails.phone}}</p>
     </div>
-    <div layout="column">
-      <p class="label">Observações</p>
-      <p class="value">{{currentDetails.comments}}</p>
+    <div layout="column" flex="40">
+      <p class="field__label">Profissão</p>
+      <p class="field__value">{{currentDetails.occupationName}}</p>
+    </div>
+  </div>
+
+  <div layout="row">
+    <div layout="column" flex="100">
+      <p class="field__label">Observações</p>
+      <p class="field__value">{{currentDetails.comments}}</p>
     </div>
   </div>
 

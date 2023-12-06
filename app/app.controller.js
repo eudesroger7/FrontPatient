@@ -5,12 +5,14 @@ angular
   ) {
     $scope.menus = [
       {
-        title: 'People',
-        path: 'people'
+        title: 'Pessoas',
+        path: 'people',
+        icon: 'group'
       },
       {
-        title: 'Occupations',
-        path: 'occupations'
+        title: 'Profissões',
+        path: 'occupations',
+        icon: 'badge'
       }
     ];
   });

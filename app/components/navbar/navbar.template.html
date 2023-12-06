@@ -1,0 +1,32 @@
+<div class="navbar" layout="row" layout-align="end center">
+  <div layout="row" layout-align="end center">
+    <p class="navbar__page-title">
+      {{pageTitle}}
+    </p>
+    <md-menu>
+      <md-button class="md-icon-button" ng-click="openAccountMenu($mdMenu, $event)">
+        <md-icon md-font-library="material-icons">person</md-icon>
+      </md-button>
+      <md-menu-content>
+        <md-menu-item>
+          <md-button>
+            <md-icon md-font-library="material-icons">person</md-icon>
+            Conta
+          </md-button>
+        </md-menu-item>
+        <md-menu-item>
+          <md-button>
+            <md-icon md-font-library="material-icons">settings</md-icon>
+            Configurações
+          </md-button>
+        </md-menu-item>
+        <md-menu-item>
+          <md-button>
+            <md-icon md-font-library="material-icons">logout</md-icon>
+            Sair
+          </md-button>
+        </md-menu-item>
+      </md-menu-content>
+    </md-menu>
+  </div>
+</div>

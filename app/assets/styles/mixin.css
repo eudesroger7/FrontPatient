@@ -1,0 +1,43 @@
+.btn {
+  background: none;
+  outline: none;
+  border: none;
+}
+
+.no-margin {
+  margin: 0 !important;
+}
+
+.input-search-container {
+  margin-top: 10px !important;
+  height: 40px; 
+}
+
+.md-content-white {
+  background-color: #fff !important;
+}
+
+.full-width {
+  width: 100% !important;
+}
+
+.dialog-confirm-message {
+  max-width: 450px;
+  margin-bottom: 0;
+}
+
+.details-title {
+  font-size: 1.1rem;
+}
+
+.field__label {
+  font-weight: 500;
+  font-size: 0.8rem;
+  margin: 0;
+}
+
+.field__value {
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin: 2px 20px 10px 0;
+}
